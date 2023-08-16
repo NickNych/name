@@ -1,7 +1,8 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Accordion from "./components/Accordion/accordion";
+import Accordion from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 // import {Debugger} from "inspector";
 
 
@@ -11,41 +12,21 @@ function App() {
     console.log("App is rendering")
     return (
         <div>
-            <AppTitle/>
+            <PageTitle title={"This is APP component"}/>
+            <PageTitle title={"My friends"}/>
             <Rating/>
-            <Accordion/>
+            <Accordion title={"Big Menu"}/>
             <Rating/>
         </div>
 
     )
 }
 
-function AppTitle() {
+function PageTitle(props: any) {
+    debugger
     console.log("AppTitle is rendering")
 
-    return <>This is APP component</>
-}
-
-
-function Star() {
-    console.log("Star is rendering")
-
-    return <div>
-        star
-    </div>
-}
-
-function Rating() {
-    console.log("Rating is rendering")
-    return (
-        <>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-        </>
-    )
+    return <h1>{props.title}</h1>
 }
 
 
