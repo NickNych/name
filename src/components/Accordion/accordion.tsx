@@ -22,6 +22,6 @@ function AccordionBody(props: any) {
         </ul>
     )
 }
-
+// asawaws
 export default Accordion;
 
