@@ -8,22 +8,29 @@ import {Rating} from "./components/Rating/Rating";
 
 
 // must return JSX
-function App() {
+function App(props: any) {
     console.log("App is rendering")
     return (
         <div>
-            <PageTitle title={"This is APP component"}/>
-            <PageTitle title={"My friends"}/>
-            <Rating/>
-            <Accordion titleValue={"Big Menu"}/>
-            <Accordion titleValue={"Users"}/>
-            <Rating/>
+            {/*<PageTitle title={"This is APP component"}/>*/}
+            {/*<PageTitle title={"My friends"}/>*/}
+            <Rating value={22324}/>
+            {/*<Accordion titleValue={"Big Menu"}/>*/}
+            {/*<Accordion titleValue={"Users"}/>*/}
+            <Rating value={""}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
 
     )
 }
 
-function PageTitle(props: any) {
+type PageTitlePropsType = {
+    title: string
+}
+function PageTitle(props: PageTitlePropsType) {
     debugger
     console.log("AppTitle is rendering")
 
