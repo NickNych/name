@@ -1,27 +1,46 @@
 import React from "react";
 
-function Accordion(props: any) {
+type AccordionPropsType = {
+    titleValue: string
+    collapsed: boolean
+}
+
+function Accordion(props: AccordionPropsType) {
     return <div>
         <AccordionTitle title={props.titleValue}/>
-        <AccordionBody/>
+        <AccordionBody collapsed={props.collapsed}/>
     </div>
 }
 
-function AccordionTitle(props: any) {
-    console.log("App is rendering")
-    return  <h3>{props.title}</h3>;
+type AccordionTitlePropsType = {
+    title: string
 }
 
-function AccordionBody(props: any) {
+function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("App is rendering")
-    return  (
-        <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        </ul>
-    )
+    return <h3>{props.title}</h3>;
 }
+
+type AccordionBodyPropsType = {
+    collapsed: boolean
+}
+
+function AccordionBody(props: AccordionBodyPropsType) {
+    console.log("App is rendering")
+    if (props.collapsed) {
+        return <></>
+    } else {
+        return (
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        )
+    }
+
+}
+
 // asawaws
 export default Accordion;
 
